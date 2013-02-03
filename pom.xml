@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>es.gerardribas</groupId>
 	<artifactId>reporting</artifactId>
-	<version>1.0.0-RELEASE</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<dependencies>
 		<dependency>
 			<groupId>es.gerardribas</groupId>
@@ -124,7 +124,7 @@
 		<connection>scm:git:git@github.com:GerardRibas/gerardribas.reporting.git</connection>
 		<developerConnection>scm:git:git@github.com:GerardRibas/gerardribas.reporting.git</developerConnection>
 		<url>http://github.com/GerardRibas/gerardribas.reporting</url>
-		<tag>reporting-1.0.0-RELEASE</tag>
+		<tag>HEAD</tag>
 	</scm>
 	
 	<distributionManagement>

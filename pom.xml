@@ -3,6 +3,11 @@
 	<groupId>es.gerardribas</groupId>
 	<artifactId>reporting</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
+
+    <prerequisites>
+        <maven>2.2.1</maven>
+    </prerequisites>
+
 	<dependencies>
 		<dependency>
 			<groupId>es.gerardribas</groupId>
@@ -14,8 +19,25 @@
 			<artifactId>jasperreports</artifactId>
 			<version>${jasperreports.version}</version>
 		</dependency>
-		
-		<!-- NO BASED IMPLEMENTATIONS IN THIS PROJECT ONLY FOR TEST -->
+        <dependency>
+            <groupId>net.sourceforge.jexcelapi</groupId>
+            <artifactId>jxl</artifactId>
+            <version>${jxl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${apache.poi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!-- NO BASED IMPLEMENTATIONS IN THIS PROJECT ONLY FOR TEST -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -54,16 +76,19 @@
 		</dependency>
 	</dependencies>
 	<properties>
-		<org.springframework.version>3.2.1.RELEASE</org.springframework.version>
+		<org.springframework.version>4.0.1.RELEASE</org.springframework.version>
 		<javax.persistence.version>1.0.1.Final</javax.persistence.version>
-		<hibernate-core-version>4.1.9.Final</hibernate-core-version>
+		<hibernate-core-version>4.3.1.Final</hibernate-core-version>
 		<junit.version>4.11</junit.version>
-		<org.hsqldb.version>2.2.9</org.hsqldb.version>
+		<org.hsqldb.version>2.3.2</org.hsqldb.version>
 		<org.slf4j.version>1.7.1</org.slf4j.version>
 		<log4j.version>1.2.17</log4j.version>
-		<jasperreports.version>5.0.1</jasperreports.version>
-		<gerardribas.persistence.version>1.0.0-RELEASE</gerardribas.persistence.version>
-		<java.version>1.6</java.version>
+		<jasperreports.version>5.5.1</jasperreports.version>
+		<gerardribas.persistence.version>1.0.3.RELEASE</gerardribas.persistence.version>
+        <javax.servlet.version>3.1.0</javax.servlet.version>
+        <jxl.version>2.6.12</jxl.version>
+        <apache.poi.version>3.9</apache.poi.version>
+        <java.version>1.6</java.version>
 	</properties>
 	
 	<build>
@@ -72,7 +97,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.0</version>
+					<version>3.1</version>
 					<configuration>
 						<source>${java.version}</source>
 						<target>${java.version}</target>
@@ -90,7 +115,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
-					<version>2.4</version>
+					<version>2.4.2</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -126,20 +151,20 @@
 		<url>http://github.com/GerardRibas/gerardribas.reporting</url>
 		<tag>HEAD</tag>
 	</scm>
-	
-	<distributionManagement>
-	<!-- Project available for all users in my public repository. Thanks to cloudbees. -->
-		<repository>
-			<id>cloudbees-public-release-repository</id>
-			<name>Gerard Ribas Releases</name>
-			<url>dav:https://repository-gribas.forge.cloudbees.com/release/</url>
-			<layout>default</layout>
-		</repository>
-		<snapshotRepository>
-			<id>cloudbees-public-snapshot-repository</id>
-			<name>Gerard Ribas Snapshots</name>
-			<url>dav:https://repository-gribas.forge.cloudbees.com/snapshot/</url>
-			<layout>default</layout>
-		</snapshotRepository>
-	</distributionManagement>
+
+    <distributionManagement>
+        <!-- Project available for all users in my public repository. Thanks to cloudbees. -->
+        <repository>
+            <id>cloudbees-private-release-repository</id>
+            <name>Gerard Ribas Releases</name>
+            <url>dav:https://repository-gribas.forge.cloudbees.com/release/</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <id>cloudbees-private-snapshot-repository</id>
+            <name>Gerard Ribas Snapshots</name>
+            <url>dav:https://repository-gribas.forge.cloudbees.com/snapshot/</url>
+            <layout>default</layout>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

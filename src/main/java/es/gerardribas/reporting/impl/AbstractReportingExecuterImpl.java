@@ -43,10 +43,6 @@ public abstract class AbstractReportingExecuterImpl implements AbstractReporting
 
 	private String destFileName;
 
-	public AbstractReportingExecuterImpl() {
-
-	}
-
 	/* (non-Javadoc)
 	 * @see es.gerardribas.reporting.impl.AbstractReportingExecuter#fillReport()
 	 */

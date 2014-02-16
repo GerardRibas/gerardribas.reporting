@@ -31,11 +31,10 @@
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
+            <artifactId>servlet-api</artifactId>
             <version>${javax.servlet.version}</version>
             <scope>provided</scope>
         </dependency>
-
 
         <!-- NO BASED IMPLEMENTATIONS IN THIS PROJECT ONLY FOR TEST -->
 		<dependency>
@@ -85,7 +84,7 @@
 		<log4j.version>1.2.17</log4j.version>
 		<jasperreports.version>5.5.1</jasperreports.version>
 		<gerardribas.persistence.version>1.0.3.RELEASE</gerardribas.persistence.version>
-        <javax.servlet.version>3.1.0</javax.servlet.version>
+        <javax.servlet.version>2.5</javax.servlet.version>
         <jxl.version>2.6.12</jxl.version>
         <apache.poi.version>3.9</apache.poi.version>
         <java.version>1.6</java.version>
